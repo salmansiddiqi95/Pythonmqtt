@@ -12,6 +12,7 @@ client.on_message=on_message
 
 print("connecting to broker ",broker)
 client.connect("broker.hivemq.com")
+
 client.loop_start() 
 print("subscribing ")
 client.subscribe("house/bulb1")
