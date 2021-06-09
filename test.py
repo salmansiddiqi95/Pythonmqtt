@@ -13,12 +13,14 @@ client.on_message=on_message
 print("connecting to broker ",broker)
 client.connect("broker.hivemq.com")
 
-client.loop_start() 
+
+#client.loop_start() 
 print("subscribing ")
 client.subscribe("house/bulb1")
 time.sleep(2)
 print("publishing ")
 client.publish("house/bulb1","Hello World")
 time.sleep(4)
+client.loop_forever()
 client.disconnect() 
-client.loop_stop() 
+#client.loop_stop() 
